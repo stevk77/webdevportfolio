@@ -1,9 +1,77 @@
+.navbar ul {
+    display: block; /* revert to block for float */
+    background-color: #4f4f4f;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin-top: 50px;
+    width: 100%;
+    height: 100px; /* set navbar height */
+    position: relative;
+    text-align: left;
+}
+
+.navbar li {
+    float: left;
+    height: 60px; /* match navbar height */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0 20px; /* only horizontal padding */
+    display: block;
+    height: 100%; /* fill li height */
+    line-height: 60px; /* vertically center text */
+    text-align: left;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+    background-size: 60px;
+}
+.navbar li{
+    float: left;
+    height: 100%;
+}
 body {
     background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
 }
 h1 {
     color: white;
 }
 p {
     color: white;
+}
+.about-container {
+    display: flex;
+    align-items: stretch;
+    gap: 24px; /* space between photo and text */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: 0; /* right align */
+}
+.about-photo {
+    width: 200px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+.about-box {
+    background-color: #e0e0e0; /* light grey */
+    color: #4f4f4f;
+    padding: 16px;
+    max-width: 500px;
+    text-align: left;
+    border-radius: 2px;
+    margin-left: auto;   /* right align */
+    margin-right: 0;
+}
+.about-box p{
+    margin: 0;
+    color: #4f4f4f;
+    text-align: justify;
+    background: none;
+    padding: 0;
+    border-radius: 0;
 }

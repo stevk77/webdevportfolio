@@ -1,8 +1,12 @@
-var navbarDiv = document.getElementById('navbar');
-if (navbarDiv) {
-    fetch('navbar.html')
-        .then(function (response) { return response.text(); })
-        .then(function (html) {
-        navbarDiv.innerHTML = html;
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    injectNavbar();
+})
+
+const injectNavbar = () => {
+    var navbarDiv = document.getElementById('navbar');
+    if (navbarDiv) {
+        fetch('navbar.html')
+            .then((response) => response.text())
+            .then((html) => navbarDiv.innerHTML = html);
+    }
 }

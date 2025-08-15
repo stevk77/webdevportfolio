@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const injectNavbar = () => {
     var navbarDiv = document.getElementById('navbar');
-    console.log(navbarDiv);
     if (navbarDiv) {
         fetch('navbar.html')
             .then((response) => response.text())

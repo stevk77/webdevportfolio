@@ -1,77 +1,99 @@
 .navbar ul {
-    display: block; /* revert to block for float */
-    background-color: #4f4f4f;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    margin-top: 50px;
-    width: 100%;
-    height: 100px; /* set navbar height */
-    position: relative;
-    text-align: left;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #444444;
+  margin: 0;
+  padding: 0 40px 0 0;
+  list-style-type: none;
+  margin-top: 0px;
+  width: 100%;
+  height: 100px; /* set navbar height */
+  position: relative;
 }
 
 .navbar li {
-    float: left;
-    height: 60px; /* match navbar height */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
 }
 
 .navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 0 20px; /* only horizontal padding */
-    display: block;
-    height: 100%; /* fill li height */
-    line-height: 60px; /* vertically center text */
-    text-align: left;
+  color: white;
+  text-decoration: none;
+  padding: 0 20px; /* only horizontal padding */
+  height: 100%; /* fill li height */
+  display: flex;
+  align-items: center;
 }
 
 .navbar a:hover {
-    background-color: #575757;
-    background-size: 60px;
+  background-color: #575757;
 }
-.navbar li{
-    float: left;
-    height: 100%;
-}
+
 body {
-    background-color: black;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
 h1 {
-    color: white;
+  color: white;
 }
+
 p {
-    color: white;
+  color: white;
 }
+
 .about-container {
-    display: flex;
-    align-items: stretch;
-    gap: 24px; /* space between photo and text */
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: 0; /* right align */
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 5%; /* percentage for relative spacing */
+  width: 90%; /* container takes up 90% of viewport width */
+  max-width: 1200px; /* maximum width on large screens */
+  margin: 0 auto; /* center the container */
+  padding: 20px;
 }
+
 .about-photo {
-    width: 200px;
-    object-fit: cover;
-    border-radius: 2px;
+  width: 45%; /* photo takes up 45% of container */
+  height: auto; /* maintain aspect ratio */
+  border-radius: 4px;
+  object-fit: cover; /* ensures image fills space properly */
 }
+
 .about-box {
-    background-color: #e0e0e0; /* light grey */
-    color: #4f4f4f;
-    padding: 16px;
-    max-width: 500px;
-    text-align: left;
-    border-radius: 2px;
-    margin-left: auto;   /* right align */
-    margin-right: 0;
+  width: 45%; /* photo takes up 45% of container */
+  background-color: #e0e0e0;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 0;
+  min-height: 100%; /* ensure box matches image height */
+  display: flex;
+  align-items: center;
 }
-.about-box p{
-    margin: 0;
-    color: #4f4f4f;
-    text-align: justify;
-    background: none;
-    padding: 0;
-    border-radius: 0;
+
+.about-box p {
+  color: #4f4f4f; /* grey text only in about-box */
+  margin: 0;
+}
+
+/* Override general p color for other paragraphs */
+p {
+  color: white; /* keep other text white */
+}
+
+/* Add media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-photo,
+  .about-box {
+    width: 100%;
+  }
 }

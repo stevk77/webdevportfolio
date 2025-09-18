@@ -1,99 +1,104 @@
-.navbar ul {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: #444444;
-  margin: 0;
-  padding: 0 40px 0 0;
-  list-style-type: none;
-  margin-top: 0px;
+.navbar {
+  position: absolute;
   width: 100%;
-  height: 100px; /* set navbar height */
-  position: relative;
-}
-
-.navbar li {
   height: 100%;
+  padding: 0 100px;
   display: flex;
   align-items: center;
-  margin-right: 40px;
+  justify-content: space-between;
+  z-index: 1;
 }
 
-.navbar a {
-  color: white;
+.navbar-left {
+  margin-left: -33px;
+}
+
+.navbar-left a {
   text-decoration: none;
-  padding: 0 20px; /* only horizontal padding */
-  height: 100%; /* fill li height */
-  display: flex;
-  align-items: center;
+  text-transform: uppercase;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 107px;
+  height: 30px;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  display: inline-block;
+  text-align: center;
+  line-height: 25px;
+  transition: all 0.2s;
 }
 
-.navbar a:hover {
-  background-color: #575757;
+.navbar-left a:hover,
+.navbar-left a:focus {
+  border-color: rgb(234, 46, 73);
+  background-color: rgb(44, 45, 47, 0);
 }
 
 body {
-  margin: 0;
-  background-color: black;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(24, 24, 24);
 }
 
-h1 {
-  color: white;
+#introslider,
+.slider-wrapper,
+.slider {
+  height: 100vh;
+  width: 100vw;
 }
 
-p {
-  color: white;
-}
-
-.about-container {
+.slider-wrapper {
   display: flex;
-  align-items: stretch;
   justify-content: center;
-  gap: 5%; /* percentage for relative spacing */
-  width: 90%; /* container takes up 90% of viewport width */
-  max-width: 1200px; /* maximum width on large screens */
-  margin: 0 auto; /* center the container */
-  padding: 20px;
+  position: absolute;
+  margin:   auto;
 }
 
-.about-photo {
-  width: 45%; /* photo takes up 45% of container */
-  height: auto; /* maintain aspect ratio */
-  border-radius: 4px;
-  object-fit: cover; /* ensures image fills space properly */
-}
-
-.about-box {
-  width: 45%; /* photo takes up 45% of container */
-  background-color: #e0e0e0;
-  padding: 20px;
-  border-radius: 4px;
-  margin: 0;
-  min-height: 100%; /* ensure box matches image height */
+.slider {
   display: flex;
-  align-items: center;
+  aspect-ratio: 16 / 9;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+  border-radius: 0.5rem;
 }
 
-.about-box p {
-  color: #4f4f4f; /* grey text only in about-box */
-  margin: 0;
+.slider img {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
 }
 
-/* Override general p color for other paragraphs */
-p {
-  color: white; /* keep other text white */
+.slider-nav {
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
-/* Add media query for mobile devices */
-@media screen and (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    gap: 20px;
+.slider-nav a {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #ffe5ac;
+  opacity: 0.75;
+  transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+  opacity: 1;
+}
+
+@media (min-width: 992px) {
+  #introslider {
+    margin-top: -58.59px;
   }
+}
 
-  .about-photo,
-  .about-box {
-    width: 100%;
-  }
+.footer {
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
 }

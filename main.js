@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   let current = 0;
-  const DURATION = 12000; // autoplay interval (ms)
+  const DURATION = 10000; // autoplay interval (ms)
   let timer = null;
 
   const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
